@@ -1,0 +1,118 @@
+body{
+   background-color: #d0c0c0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    height: 100svh;
+}
+.demo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height:60px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border: 1px solid black;
+    border-radius: 7px;
+    background-color:#F3F3E0;
+    box-shadow: 0px 0px 30px 2px rgb(236, 229, 229);
+    font-size: larger;
+    font-weight: bold;
+}
+.demo:hover{
+    color: #555879;
+}
+.demo::before{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:#E5E0D8;
+    transform: translate(-140px);
+    transition: transform 1s linear;
+}
+.demo::after{
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:#D1A980;
+    transform: translate(140px);
+    transition: transform 1s linear;
+}
+.demo:hover::after{
+    transform: translate(80px) skewX(30deg);
+}
+.demo:hover::before{
+    transform: translate(-50px) skewX(30deg);
+}
+.demo2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height:60px;
+    position: relative;
+    z-index: 1;
+    color: white;
+    border: 1px solid black;
+    border-radius: 7px;
+    background-color:black;
+    box-shadow: 0px 0px 30px 2px rgb(236, 229, 229);
+    font-size: larger;
+    font-weight: bold;
+    transition: all 0.3s linear;
+}
+.demo2:hover{
+    width: 155px;
+    height: 65px;
+}
+.demo2::after{
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 20%;
+    height: 50%;
+    background-color: rgb(255, 255, 255,0.4);
+    border-radius: 50%;
+    transform: translateX(75px) translateY(23px);
+    transition: all 0.3s linear;
+}
+.demo2:hover::after{
+    width: 135px;
+    height: 55px;
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 2px;
+    transform: translateY(-11px);
+}
+.demo3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height:60px;
+    position: relative;
+    color: black;
+    border: 1px solid black;
+    background-color:aliceblue;
+    box-shadow: 0px 0px 30px 2px rgb(236, 229, 229);
+    font-size: larger;
+    font-weight: bold;
+    transition: all 0.3s linear;
+}
+.demo3::after{
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 70px;
+    background-color: black;
+    transform: translateX(6px) translateY(4px);
+    transition: all 0.3s linear;
+}

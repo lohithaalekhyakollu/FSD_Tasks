@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIMER</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/timer.css">
+</head>
+<body>
+    <div class="heading">
+        <i class="fas fa-stopwatch heading-icon"></i>
+        Timer
+    </div>
+    <div class="timer-container">
+        <div class="timer">
+            <div class="minute">
+                M
+            </div>
+            <div class="colon">
+                :
+            </div>
+            <div class="seconds">
+                S
+            </div>
+            <div class="colon">
+                :
+            </div>
+            <div class="milli">
+                CS
+
+            </div>
+        </div>
+        <div class="bu">
+            <div class="pause" onclick="pause()">
+                Pause
+            </div>
+            <div class="reset" onclick="reset()">
+                Reset
+            </div>
+            <div class="set" onclick="set()">
+                Start
+            </div>
+        </div>
+    </div>
+    <script src="../JS/timer.js"></script>
+</body>
+</html>

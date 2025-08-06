@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>String Object Properties and Methods</title>
+</head>
+<body>
+    <h1>String Object Properties and Methods</h1>
+    <button onclick="createString()">Create String</button>
+    <button onclick="displayString()">Display String</button>
+    <button onclick="convertToUpper()">Convert to Uppercase</button>
+    <button onclick="convertToLower()">Convert to Lowercase</button>
+    <div id="result"></div>
+    <script>
+        let myString = "";
+        function createString() {
+            myString = "Hello, World!";
+            document.getElementById("result").innerHTML = "String created: " + myString;
+        }
+        function displayString() {
+            document.getElementById("result").innerHTML = "String: " + myString + "<br>Length: " + myString.length;
+        }
+        function convertToUpper() {
+            document.getElementById("result").innerHTML = "Uppercase: " + myString.toUpperCase();
+        }
+        function convertToLower() {
+            document.getElementById("result").innerHTML = "Lowercase: " + myString.toLowerCase();
+        }
+    </script>
+</body>
+</html>

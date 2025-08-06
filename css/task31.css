@@ -1,0 +1,137 @@
+body {
+   background-image: url("https://images.unsplash.com/photo-1520257328559-2062fc7de0b3?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c29sYXIlMjBzeXN0ZW0lMjBwbGFuZXRzfGVufDB8fDB8fHww");
+   background-repeat: no-repeat;
+  margin: 0;
+  overflow: hidden;
+}
+
+.solar-system {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sun {
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, yellow, orange);
+  box-shadow: 0px 0px 10px 10px orange;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 10;
+}
+
+.orbit {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  position: absolute;
+  animation: spin 60s linear infinite;
+}
+
+.mercury-orbit {
+  width: 150px;
+  height: 150px;
+}
+
+.venus-orbit {
+  width: 220px;
+  height: 220px;
+  animation-duration: 90s;
+}
+
+.earth-orbit {
+  width: 300px;
+  height: 300px;
+  animation-duration: 120s;
+}
+
+.mars-orbit {
+  width: 380px;
+  height: 380px;
+  animation-duration: 160s;
+}
+
+.planet {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-size: cover;
+}
+.jupiter-orbit {
+  width: 480px;
+  height: 480px;
+  animation-duration: 200s;
+}
+
+.saturn-orbit {
+  width: 580px;
+  height: 580px;
+  animation-duration: 240s;
+}
+
+.uranus-orbit {
+  width: 680px;
+  height: 680px;
+  animation-duration: 280s;
+}
+
+.neptune-orbit {
+  width: 780px;
+  height: 780px;
+  animation-duration: 320s;
+}
+.jupiter {
+  width: 45px;
+  height: 45px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg');
+}
+
+.saturn {
+  width: 42px;
+  height: 42px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg');
+}
+
+.uranus {
+  width: 35px;
+  height: 35px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg');
+}
+
+.neptune {
+  width: 35px;
+  height: 35px;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg');
+}
+
+.mercury {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg');
+}
+
+.venus {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg');
+}
+
+.earth {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg');
+}
+
+.mars {
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg');
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

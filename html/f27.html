@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Regex Object Properties and Methods</title>
+</head>
+<body>
+    <h1>Regex Object Properties and Methods</h1>
+    <button onclick="testRegex()">Test Regex</button>
+    <button onclick="execRegex()">Exec Regex</button>
+    <button onclick="matchRegex()">Match Regex</button>
+    <div id="result"></div>
+    <script>
+        let pattern = /hello/gi;
+        let str = "Hello, hello, HELLO!";
+        function testRegex() {
+            let result = pattern.test(str);
+            document.getElementById("result").innerHTML = "Test result: " + result;
+        }
+        function execRegex() {
+            let result = pattern.exec(str);
+            document.getElementById("result").innerHTML = "Exec result: " + result;
+        }
+        function matchRegex() {
+            let result = str.match(pattern);
+            document.getElementById("result").innerHTML = "Match result: " + result;
+        }
+    </script>
+</body>
+</html>

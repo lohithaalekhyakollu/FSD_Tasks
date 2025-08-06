@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Object Properties and Methods - title</title>
+</head>
+<body>
+    <h1 id="heading">Document Object Properties and Methods - elements</h1>
+    <p id="paragraph">Document Object properties and methods-paragraph</p>
+    <button onclick="changeHeading()">Change Heading</button>
+    <button onclick="changeParagraph()">Change Paragraph</button>
+    <button onclick="writeText()">Write Text</button>
+    <button onclick="getElements()">Get Elements</button>
+    <script>
+        console.log(document.title);
+        console.log(document.URL);
+        function changeHeading() {
+            document.getElementById("heading").innerHTML = "New Heading";
+        }
+        function changeParagraph() {
+            document.getElementById("paragraph").innerHTML = "New Paragraph";
+        }
+        function writeText() {
+            document.write("Hello, World!");
+        }
+        function getElements() {
+            console.log(document.getElementById("heading"));
+            console.log(document.getElementsByTagName("p"));
+            console.log(document.querySelector("#heading"));
+        }
+    </script>
+</body>
+</html>

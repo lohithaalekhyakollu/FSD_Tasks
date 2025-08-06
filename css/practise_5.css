@@ -1,0 +1,33 @@
+*{
+    padding: 0;margin: 0;
+}
+nav{
+    text-decoration: none;
+    margin-left: 50px;
+    padding: 5px;
+}
+header{
+    background-color: yellowgreen;
+    font-weight: 30px;
+}
+#first{
+    height:50px;
+    width: 50px;
+    background-color: bisque;
+    border-radius: 50%;
+}
+.box{
+    height: 100px;
+    width: 100px;
+    background-color: aqua;
+    margin: 5px;
+    display:inline-block;
+}
+#container{
+    border:3px solid black;
+    margin:5px;
+}
+#box4{
+    position:fixed;
+    right:10px;
+}

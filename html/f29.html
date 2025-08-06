@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Defined Object</title>
+</head>
+<body>
+    <h1>User Defined Object</h1>
+    <button onclick="createObject()">Create Object</button>
+    <button onclick="displayObject()">Display Object</button>
+    <div id="result"></div>
+    <script>
+        class Person {
+            constructor(name, age) {
+                this._name = name;
+                this._age = age;
+            }
+            get name() {
+                return this._name;
+            }
+            set name(value) {
+                this._name = value;
+            }
+            get age() {
+                return this._age;
+            }
+            set age(value) {
+                this._age = value;
+            }
+            display() {
+                return `Name: ${this._name}, Age: ${this._age}`;
+            }
+            greet() {
+                return `Hello, my name is ${this._name} and I am ${this._age} years old.`;
+            }
+        }
+        let person;
+        function createObject() {
+            person = new Person("John Doe", 30);
+            document.getElementById("result").innerHTML = "Object created successfully!";
+        }
+        function displayObject() {
+            if (person) {
+                document.getElementById("result").innerHTML = person.display();
+            } else {
+                document.getElementById("result").innerHTML = "Please create an object first!";
+            }
+        }
+    </script>
+</body>
+</html>

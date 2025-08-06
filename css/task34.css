@@ -1,0 +1,67 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100svh;
+    overflow: hidden;
+    
+    perspective: 1000px;
+}
+body {
+  background-color: black;
+  background-size: 40px 40px;
+}
+
+.cube{
+    width: 300px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation:  ani 5s infinite linear;
+}
+.cube:hover{
+    animation-play-state: paused;
+}
+.cube >  div{
+     width: 300px;
+    height: 300px;
+    position: absolute;
+    display: grid;
+   grid-template-rows: 1fr 1fr 1fr;
+   grid-template-columns: 1fr 1fr 1fr;
+gap: 2px;
+}
+
+.left{
+    background-color: red;
+    transform: rotateY(90deg) translateZ(150px);
+}
+.right{
+    background-color: blue;
+     transform: rotateY(90deg) translateZ(-150px);
+}
+.top{
+    background-color: green;
+    transform: rotateX(90deg) translateZ(-150px);
+}
+.bottom{
+    background-color: white;
+    transform: rotateX(90deg) translateZ(150px);
+}
+.front{
+    background-color: orange;
+    transform: translateZ(150px);
+}
+.back{
+    background-color: yellow;
+     transform: translateZ(-150px);
+}
+@keyframes ani {
+    100%{
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+    
+}
+.child {
+    border: 2px black solid ;
+} 

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Date Object Properties and Methods</title>
+</head>
+<body>
+    <h1>Date Object Properties and Methods</h1>
+    <button onclick="createDate()">Create Date</button>
+    <button onclick="displayDate()">Display Date</button>
+    <button onclick="getDate()">Get Date</button>
+    <button onclick="getDay()">Get Day</button>
+    <button onclick="getMonth()">Get Month</button>
+    <button onclick="getFullYear()">Get Full Year</button>
+    <div id="result"></div>
+    <script>
+        let date = new Date();
+        function createDate() {
+            date = new Date();
+            document.getElementById("result").innerHTML = "Date created: " + date;
+        }
+        function displayDate() {
+            document.getElementById("result").innerHTML = "Date: " + date;
+        }
+        function getDate() {
+            document.getElementById("result").innerHTML = "Date: " + date.getDate();
+        }
+        function getDay() {
+            document.getElementById("result").innerHTML = "Day: " + date.getDay();
+        }
+        function getMonth() {
+            document.getElementById("result").innerHTML = "Month: " + date.getMonth();
+        }
+        function getFullYear() {
+            document.getElementById("result").innerHTML = "Full Year: " + date.getFullYear();
+        }
+    </script>
+</body>
+</html>

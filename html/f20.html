@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Methods</title>
+</head>
+<body>
+    <h2>Different Ways to Take Input</h2>
+    <script>
+        let name = prompt("Enter your name:");
+        console.log("Name: " + name);
+        let isOkay = confirm("Are you sure?");
+        console.log("Confirmation: " + isOkay);
+        function showInput() {
+            let userInput = document.getElementById("userInput").value;
+            alert("Your Input: " + userInput);
+        }
+    </script>
+    <form>
+        <label>Enter something:</label>
+        <input type="text" id="userInput">
+        <button type="button" onclick="showInput()">Submit</button>
+    </form>
+</body>
+</html>

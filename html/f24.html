@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array Object Properties and Methods</title>
+</head>
+<body>
+    <h1>Array Object Properties and Methods</h1>
+    <button onclick="createArray()">Create Array</button>
+    <button onclick="displayArray()">Display Array</button>
+    <button onclick="addElement()">Add Element</button>
+    <button onclick="sortArray()">Sort Array</button>
+    <button onclick="getLength()">Get Array Length</button>
+    <div id="result"></div>
+    <script>
+        let myArray = [];
+        function createArray() {
+            myArray = [10, 20, 30, 40, 50];
+            document.getElementById("result").innerHTML = "Array created: " + myArray;
+        }
+
+        function displayArray() {
+            document.getElementById("result").innerHTML = "Array: " + myArray;
+        }
+
+        function addElement() {
+            let element = parseInt(prompt("Enter an element to add:"));
+            myArray.push(element);
+            document.getElementById("result").innerHTML = "Element added: " + myArray;
+        }
+
+        function sortArray() {
+            myArray.sort((a, b) => a - b);
+            document.getElementById("result").innerHTML = "Array sorted: " + myArray;
+        }
+
+        function getLength() {
+            document.getElementById("result").innerHTML = "Array length: " + myArray.length;
+        }
+    </script>
+</body>
+</html>

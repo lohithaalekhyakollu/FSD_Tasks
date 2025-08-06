@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doctors & CSS Selectors</title>
+  <style>
+    /* i. Simple selectors */
+    body {
+      font-family: Arial, sans-serif; /* Element selector */
+    }
+
+    #doctor-heading {
+      color: darkblue; /* ID selector */
+    }
+
+    .specialist {
+      font-weight: bold; /* Class selector */
+    }
+
+    h1, h2 {
+      text-align: center; /* Group selector */
+    }
+
+    * {
+      margin: 0; /* Universal selector */
+    }
+
+    /* ii. Combinator selectors */
+    div p {
+      color: darkgreen; /* Descendant selector */
+    }
+
+    ul > li {
+      list-style: square; /* Child selector */
+    }
+
+    h2 + p {
+      color: brown; /* Adjacent sibling selector */
+    }
+
+    h2 ~ p {
+      font-style: italic; /* General sibling selector */
+    }
+
+    /* iii. Pseudo-class selector */
+    a:hover {
+      color: crimson; /* Hover effect for links */
+    }
+
+    li:nth-child(even) {
+      background-color: #f0f8ff; /* Alternate list items */
+    }
+
+    /* iv. Pseudo-element selector */
+    p::first-line {
+      font-size: 1.2em; /* Highlight first line of each paragraph */
+    }
+
+    p::before {
+      content: '🩺 '; /* Add symbol before paragraphs */
+    }
+
+    /* v. Attribute selector */
+    [type="email"] {
+      border: 2px solid teal; /* Style email input fields */
+    }
+
+    [data-role="doctor-info"] {
+      color: purple; /* Custom attribute selector */
+    }
+  </style>
+</head>
+<body>
+  <h1 id="doctor-heading">All About Doctors</h1>
+  
+  <h2>Specialists</h2>
+  <p class="specialist">Pediatricians, cardiologists, neurologists, and more.</p>
+  <div>
+    <p>Doctors diagnose and treat various conditions.</p>
+  </div>
+  
+  <h2>Combinator Examples</h2>
+  <ul>
+    <li>General Practitioner</li>
+    <li>Surgeon</li>
+    <li>Psychiatrist</li>
+  </ul>
+  <h2>More Information</h2>
+  <p>Doctors often specialize in specific fields to provide better care.</p>
+  
+  <h2>Pseudo-class Example</h2>
+  <a href="#">Click here to learn about doctors</a>
+  
+  <h2>Pseudo-element Example</h2>
+  <p>Doctors play a crucial role in maintaining community health.</p>
+  
+  <h2>Attribute Selector Example</h2>
+  <input type="email" placeholder="Enter your email for updates">
+  <div data-role="doctor-info">Doctors require years of education and training.</div>
+</body>
+</html>

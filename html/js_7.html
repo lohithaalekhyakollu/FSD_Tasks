@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="hi">Hello</div>
+    <div class="demo">
+        WhatsUp?
+    </div>
+    <div class="demo">
+        Guys..
+    </div>
+    <p>Love you Bachee...</p>
+    <div class="hello"></div>
+    <script>
+        console.log(document.getElementById("hi"));
+        console.log(document.getElementsByClassName("demo"));
+        console.log(document.getElementsByTagName("p"));
+        console.log(document.querySelector("demo"));
+        console.log(document.querySelectorAll("demo"));
+        console.log(document.getElementsByClassName("demo")[0].innerText);
+        console.log(document.getElementsByClassName("demo")[1].innerText);
+        console.log(document.getElementsByClassName("hello").innerText="Bye...");
+    </script>
+</body>
+</html>

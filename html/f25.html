@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Object Properties and Methods</title>
+</head>
+<body>
+    <h1>Math Object Properties and Methods</h1>
+    <button onclick="displayProperties()">Display Math Properties</button>
+    <button onclick="displayMethods()">Display Math Methods</button>
+    <div id="result"></div>
+    <script>
+        function displayProperties() {
+            let result = "";
+            result += "Value of E: " + Math.E + "<br>";
+            result += "Value of PI: " + Math.PI + "<br>";
+            result += "Value of LN2: " + Math.LN2 + "<br>";
+            result += "Value of LN10: " + Math.LN10 + "<br>";
+            result += "Value of LOG2E: " + Math.LOG2E + "<br>";
+            result += "Value of SQRT2: " + Math.SQRT2 + "<br>";
+            document.getElementById("result").innerHTML = result;
+        }
+        function displayMethods() {
+            let result = "";
+            result += "Natural Log of 10: " + Math.log(10) + "<br>";
+            result += "Base-2 Logarithm of 10: " + Math.log2(10) + "<br>";
+            result += "Square Root of 16: " + Math.sqrt(16) + "<br>";
+            result += "Maximum of 10 and 20: " + Math.max(10, 20) + "<br>";
+            result += "Minimum of 10 and 20: " + Math.min(10, 20) + "<br>";
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

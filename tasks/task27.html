@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Grid Layout</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #ecf0f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-template-rows: 1fr 2fr 3fr;
+      gap: 20px;
+      background-color: #34495e;
+      padding: 20px;
+      width: 80vw;
+      height: 80vh;
+    }
+
+    .grid-item {
+      background-color: #e74c3c; /* red */
+      width: 100px;
+      height: 100px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container">
+    <div class="grid-item" style="justify-self: end;
+      align-self: end;"></div>
+    <div class="grid-item" style="justify-self: center;
+      align-self: end;"></div>
+    <div class="grid-item" style="justify-self: start;
+      align-self: end;"></div>
+    <div class="grid-item" style="justify-self: end;
+      align-self: center;"></div>
+    <div class="grid-item" style="justify-self: center;
+      align-self: center;"></div>
+    <div class="grid-item" style="justify-self: start;
+      align-self:center;"></div>
+    <div class="grid-item" style="justify-self: end;
+      align-self:start;"></div>
+    <div class="grid-item" style="justify-self: center;
+      align-self: start;"></div>
+      <div class="grid-item" style="justify-self: start;
+      align-self: start;"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+body {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: radial-gradient(circle at top left, #f9f9f9, #e1e1e1);
+}
+.names
+{
+  font-family: 'Playfair Display', serif;
+}
+.title{
+  font-family: 'Roboto Slab', serif;
+font-weight: 400;
+}
+a{
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+}
+.profile-pic {
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-top: 15px;
+  margin-bottom: 13px;
+}
+.card {
+    width: 530px;
+    height: 390px;
+    border-radius: 15px;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    background-image: linear-gradient(to bottom left,#9A7787,#FED7BF,#E4AFB0,#D6959A,#FBA581,#968EA9);
+}
+h2 {
+  font-size: 24px;
+  margin: 0 0 5px;
+  font-weight: bold;
+}
+
+.title {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+hr {
+  width: 60px;
+  height: 3px;
+  background-color: #111;
+  margin: 10px auto;
+  border-radius: 5px;
+}
+
+.card p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.card i {
+  margin-right: 8px;
+  color: #666;
+}
+
+.socials {
+  margin-top: 15px;
+}
+.socials a:hover {
+  color: #0077b5;
+}

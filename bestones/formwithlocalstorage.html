@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Local Storage Form</title>
+    <style>
+        body{
+    background-color: rgb(249, 168, 168);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100svh;
+}
+form{
+    padding: 25px;
+    border: 1px solid black;
+    background-color: white;
+    box-shadow: 0px 0px 7px 2px white;
+}
+    </style>
+    <script>
+        function funs(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phn').value;
+            const gender = document.querySelector('input[name="Gen"]:checked')?.value || '';
+            const college = document.getElementById('clg').value;
+            const additional = document.getElementById('more').value;
+
+            const formData = {
+                name,
+                email,
+                phone,
+                gender,
+                college,
+                additional
+            };
+            const uniqueKey = `formData_${Date.now()}`;
+            localStorage.setItem(uniqueKey, JSON.stringify(formData));
+            alert("Form data saved under key: " + uniqueKey);
+            event.target.reset();
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="funs(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email"><br><br>
+
+        <label for="phn">Mobile:</label>
+        <input type="number" id="phn"><br><br>
+
+        <label>Gender:</label>
+        <input type="radio" name="Gen" id="male" value="Male">
+        <label for="male">Male</label>
+        <input type="radio" name="Gen" id="female" value="Female">
+        <label for="female">Female</label>
+        <input type="radio" name="Gen" id="other" value="Other">
+        <label for="other">Others</label><br><br>
+
+        <label for="clg">College:</label>
+        <select id="clg">
+            <option value="AEC">AEC</option>
+            <option value="ACET">ACET</option>
+            <option value="ACOE">ACOE</option>
+        </select><br><br>
+
+        <label for="more">Additional:</label>
+        <textarea id="more"></textarea><br><br>
+
+        <button type="submit">Submit</button>
+        <input type="reset">
+    </form>
+</body>
+</html>

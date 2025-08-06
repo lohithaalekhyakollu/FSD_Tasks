@@ -1,0 +1,251 @@
+.cap{
+    width: 36px;
+    height: 22px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: black;
+    top:29%;
+}
+body {
+    background-color: white;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    height: 100vh;
+}
+.nose{
+    height: 4px;
+    border: 1px solid black;
+    position: absolute;
+    top: 17px;
+}
+.mouth{
+    position: absolute;
+    top:25px;
+    width: 10px;
+    height: 2px;
+    background-color: red;
+    border: 1px solid black;
+    border-bottom-left-radius:50% ;
+    border-bottom-right-radius: 50%;
+}
+.neck{
+    height: 10px;
+    width:10px;
+    border: 1px solid black;
+    position: absolute;
+    top: 35%;
+    background-color: bisque;
+}
+.white{
+    top: 10px;
+    width: 7px;
+    border-radius: 50%;
+    height: 7px;
+    background-color: white;
+    position: absolute;
+    
+}
+.eyes{
+    left: 25%;
+    bottom: 0px;
+    width: 3px;
+    border-radius: 50%;
+    height: 3px;
+    background-color: rgb(80, 79, 78);
+    position: absolute;
+}
+.scene{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 40%;
+}
+.face{
+    top:30%;
+    width: 35px;
+    border-radius: 50%;
+    height: 36px;
+    background-color: bisque;
+    position: absolute;
+    border: 1px solid black;
+    z-index: 2;
+}
+.sleeve{
+    width: 15px;
+    position: absolute;
+    height: 13px;
+    top:-2px;
+    background-color: lightblue;
+    border: 1px solid black;
+    z-index: 2;
+}
+.body1{
+    width: 38px;
+    position: absolute;
+    height: 39px;
+    border-top-left-radius: 9%;
+    border-top-right-radius: 9%;
+    background-color: lightblue;
+    top:36.5%;
+    border: 1px solid black;
+}
+.button2{
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    background-color: black;
+    border-radius: 50%; left: 55%;
+}
+.button{
+    width: 2px;
+    height: 2px;
+    position: absolute;
+    background-color: black;
+    border-radius: 50%; left: 55%;
+}
+.pocket-line {
+    position: absolute;
+    width: 0;
+    height: 0;
+	border-left: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-top: 2px solid #555;
+}
+.line{
+    left: 50%;
+    height:39px;
+    width: 1px;
+    background-color:  rgb(0, 0, 0);
+    position: absolute;
+}
+.line2{
+    height:3px;
+    width: 1px;
+    background-color:  black;
+    position: absolute;
+}
+.line3{
+    left: 50%;
+    height:28px;
+    width: 1px;
+    background-color:  black;
+    position: absolute;
+}
+.pocket{
+    width: 6px;
+    height: 6px;
+    position: absolute;
+    border: 1px solid black;
+    background-color: lightblue;
+    top:9%;
+}
+.belt{
+    width: 38px;
+    position: absolute;
+    height: 3px;
+    background-color: rgb(225, 166, 27);
+    top:42%;
+    border: 1px solid black;
+}
+.legs{
+    position: absolute;
+    width:10px;
+    height: 25px;
+    top:46.5%;
+    background-color: bisque;
+    border: 1px solid black;
+}
+.ho-line{
+    height:1px;
+    width: 10px;
+    background-color:black;
+    position: absolute;
+}
+.socks{
+    position: absolute;
+    width:10px;
+    height: 13px;
+    background-color: white;
+    bottom: 0px;
+}
+.pant
+{
+    width: 38px;
+    position: absolute;
+    height: 28px;
+    background-color: rgb(235, 226, 226);
+    top:42.5%;
+    border: 1px solid black;
+    z-index: 2;
+}
+.ear {
+    position: absolute;
+    width: 5px;
+    height: 8px;
+    background: bisque;
+    border-radius: 50%;
+    top: 10px;
+}
+.ear.left {
+    border-left:1px solid black;
+    left: -3px;
+}
+.ear.right {
+    border-right:1px solid black;
+    right: -3px;
+}
+.shoe {
+    top:50%;
+      width: 17px;
+      height: 10px;
+      background: #333;
+      border-radius: 0 0 6px 2px;
+      position: absolute;
+}
+.hand{
+    position: absolute;
+    width:31px;
+    height: 9px;
+    top:36.5%;
+    background-color: bisque;
+    border: 1px solid black;
+}
+.wrist{
+    position: absolute;
+    width:10px;
+    top:-1px;
+    height: 10px;
+    background-color: bisque;
+    border: 1px solid black;
+    
+}
+.thumb{
+    height:4px;
+    width:2px;
+    position: absolute;
+    background-color: bisque;
+    border: 1px solid black;
+}
+.index{
+    height:2px;
+    width:7px;
+    position: absolute;
+    background-color: bisque;
+    border: 1px solid black;
+}
+.m-f{
+    height: 2px;
+    width:10px;
+    position: absolute;
+    background-color: bisque;
+    border: 1px solid black;
+
+}
+.small-f{
+    height: 2px;
+    width:5px;
+    position: absolute;
+    background-color: bisque;
+    border: 1px solid black;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Window Object Properties and Methods</title>
+</head>
+<body>
+    <h1 id="heading">Window Object Properties and Methods</h1>
+    <p id="paragraph">This program demonstrates the use of Window Object properties and methods.</p>
+    <button onclick="openWindow()">Open New Window</button>
+    <button onclick="closeWindow()">Close Current Window</button>
+    <button onclick="getInfo()">Get Window Information</button>
+    <script>
+        function openWindow() {
+            window.open("https://www.google.com", "_blank", "width=400, height=300");
+        }
+        function closeWindow() {
+            window.close();
+        }
+        function getInfo() {
+            alert("Window Inner Width: " + window.innerWidth);
+            alert("Window Inner Height: " + window.innerHeight);
+            alert("Window Screen X: " + window.screenX);
+            alert("Window Screen Y: " + window.screenY);
+            alert("Window Location: " + window.location);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+        <title>Loops</title>
+</head>
+<body>
+    <h1>Loops</h1>
+    <button onclick="printNumbersFor()">For Loop</button>
+    <button onclick="printNumbersWhile()">While Loop</button>
+    <button onclick="printNumbersDoWhile()">Do-While Loop</button>
+    <div id="result"></div>
+    <script>
+        function printNumbersFor() {
+            let result = "For"+`<br>`;
+
+            for (let i = 1; i <= 10; i++) {
+                result += `${i}<br>`;
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+        function printNumbersWhile() {
+            let result = "While"+`<br>`;
+            let i = 1;
+            while (i <= 10) {
+                result += `${i}<br>`;
+                i++;
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+        function printNumbersDoWhile() {
+            let result = "DoWhile"+`<br>`;
+            let i = 1;
+            do {
+                result += `${i}<br>`;
+                i++;
+            } while (i <= 10);
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

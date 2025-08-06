@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Frame Example</title>
+</head>
+<body>
+
+    <h2>Image Frame Example</h2>
+    <p>This page displays an image inside a frame:</p>
+
+    <!-- Frameset: Defines layout with one frame for the image -->
+    <frameset rows="100%">
+        <!-- Frame displaying an image from the given URL -->
+        <frame src="https://images.pexels.com/photos/674010/pexels-photo-674010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" title="Image Frame">
+    </frameset>
+
+    <!-- No Frames Content for browsers that do not support frames -->
+    <noframes>
+        <p>Your browser does not support frames. Please upgrade your browser.</p>
+    </noframes>
+
+</body>
+</html>

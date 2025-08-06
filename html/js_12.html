@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //example -> pending
+        const resp=new Promise(function(resolved,reject){
+            var x=10;
+            if(x==10){
+                // resolved();
+            }
+            else{
+                // rejected();
+            }
+        })
+        console.log(resp);
+        //example1
+        const res=new Promise(function(resolved,reject){
+            var x=10;
+            if(x==10){
+                resolved();
+            }
+            else{
+                rejected();
+            }
+        })
+        console.log(res);
+        //example2
+         const resul=new Promise(function(resolved,reject){
+            var x=18;
+            if(x>=10){
+                resolved("Eligible");
+            }
+            else{
+                rejected("Not Eligible");
+            }
+        })
+        resul.then(function(result){
+            console.log(result);
+        })
+        resul.catch(function(err){
+            console.log(err);
+        })
+        //example3
+        function fun1()
+        {
+            return new Promise(function(resolved){
+                setTimeout(function(){
+                    resolved();
+                },1000)
+            })
+        }
+        function fun2()
+        {
+            return new Promise(function(resolved){
+                setTimeout(function(){
+                    resolved();
+                },1000)
+            })
+        }
+        function fun3()
+        {
+            return new Promise(function(resolved){
+                setTimeout(function(){
+                    resolved();
+                },1000)
+            })
+        }
+        fun1().then(function(){
+            console.log("FUN-1 Completed");
+            fun2().then(function(){
+                 console.log("FUN-2 Completed");
+                fun3().then(function(){
+                     console.log("FUN-3 Completed")
+
+                })
+            })
+        })
+        //exampel4
+        function fun111()
+        {
+            return new Promise(function(resolved){
+                setTimeout(function(){
+                    resolved(1);
+                },1000)
+            })
+        }
+        function fun222(value)
+        {
+            return new Promise(function(resolved){
+                setTimeout(function(){
+                    resolved(value+1);
+                },1000)
+            })
+        }
+        function fun333(value)
+        {
+            return new Promise(function(resolved){
+                setTimeout(function(){
+                    resolved(value+1);
+                },1000)
+            })
+        }
+          fun111().then(function(res11){
+            console.log("FUN-1 Completed",res11);
+            fun222(res11).then(function(res22){
+                 console.log("FUN-2 Completed",res22);
+                fun333(res22).then(function(res33){
+                     console.log("FUN-3 Completed",res33)
+
+                })
+            })
+        })
+        //example5 if we have multiple functions then and catch might we difficult so we use async and wait with try and catch better than example4 
+        function fun11()
+        {
+            return new Promise(function(resolved){
+                setTimeout(function(){
+                    resolved(1);
+                },1000)
+            })
+        }
+        function fun22(value)
+        {
+            return new Promise(function(resolved){
+                setTimeout(function(){
+                    resolved(value+1);
+                },1000)
+            })
+        }
+        function fun33(value)
+        {
+            return new Promise(function(resolved){
+                setTimeout(function(){
+                    resolved(value+1);
+                },1000)
+            })
+        }
+        async function execute() {
+            try{
+                const res1=await fun11();
+                const res2=await fun22(res1);
+                const res3=await fun33(res2);
+                console.log(res3);
+            }
+            catch(err)
+            {
+                console.log(err);
+            }
+        }
+        execute();
+    </script>
+</body>
+</html>

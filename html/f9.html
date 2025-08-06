@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS Selectors Example</title>
+        <style>
+            h1 { 
+            color: green; 
+            text-align:center;
+            }
+            #unique {
+            color: brown;
+            text-align:center;
+            font-weight:bold;
+            }
+            p, a{ 
+            margin: 10px;
+            }
+            .important{
+            color: red;
+            }
+            * { 
+            font-family: Arial, 
+            sans-serif; 
+            text-align:center;
+            }
+            div p { 
+            color: green;
+            }
+            div > p { 
+            color: orange;
+            }
+            h1 + p { 
+            color: purple;
+            }
+            h1 ~ p { 
+            color: brown; 
+            }
+            a:hover { 
+            color: pink;
+            }
+            p::first-line { 
+            font-weight: bold;
+            }
+            [type="text"] { 
+            border: 2px solid blue;
+            }
+        </style>
+    </head>
+     <body>
+        <h1 id="unique">CSS Selector Examples</h1>
+        <hr>
+        <h1> SIMPLE SELECTORS</h1>
+        <p class="important">
+        Simple selectors in CSS are fundamental building blocks used to select and style HTML elements based on their type, ID, class, or other attributes.</p> 
+        <p class="important">The element selector targets all elements of a specified type.</p>
+        <p class="important">The ID selector targets a single element with a specific ID.</p>
+        <p class="important">This selector targets all elements with a specific class attribute.</p>
+        <hr>
+        <h1>COMBINED SELECTORS</h1>
+        <div>
+        <p>Combined selectors in CSS allow you to apply more specific styles to elements by combining different types of selectors.</p>
+        <p> By combining selectors, you can create more precise rules for styling elements based on their relationship to other elements, their attributes, their states, and more.</p>
+        </div>
+        <p>DESCENDANT SELECTOR.</p>
+        <p>CHILD SELECTOR.</p>
+        <p>ADJACENT SIBILING SELECTOR.</p>
+        <p>GENERAL SIBILING SELECTOR.</p>
+        <hr>
+        <h1>PSEUDO SELECTORS</h1>
+        <a href="#">This is a link</a>
+        <hr>
+        <h1> ATTRIBUTE SELECTION </h1>
+        <input type="text" placeholder="Enter text here">
+        <input type="button" value="Click me">
+    </body>
+</html>

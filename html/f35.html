@@ -1,0 +1,39 @@
+<html>
+<head>
+    <title>Denomination Calculator</title>
+</head>
+<body>
+    <h1>Denomination Calculator</h1>
+    <input id="amount" type="number" placeholder="Enter amount">
+    <button onclick="calculateDenomination()">Calculate</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculateDenomination() {
+            let amount = parseInt(document.getElementById("amount").value);
+            let denominations = [
+                { value: 100, count: 0 },
+                { value: 50, count: 0 },
+                { value: 20, count: 0 },
+                { value: 10, count: 0 },
+                { value: 5, count: 0 },
+                { value: 2, count: 0 },
+                { value: 1, count: 0 }
+            ];
+
+            for (let i = 0; i < denominations.length; i++) {
+                denominations[i].count = Math.floor(amount / denominations[i].value);
+                amount %= denominations[i].value;
+            }
+            let result = "";
+            for (let i = 0; i < denominations.length; i++) {
+                if (denominations[i].count > 0) {
+                    result += `${denominations[i].count}-${denominations[i].value}'s, `;
+                }
+            }
+            document.getElementById("result").innerHTML = result.slice(0, -2); // Remove trailing comma and space
+        }
+    </script>
+</body>
+</html>

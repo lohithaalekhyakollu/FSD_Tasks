@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CSS Car Animation</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .sky {
+      width: 100%;
+      height: 700px;
+      background-image: linear-gradient(to bottom, skyblue, white);
+      animation: NI8 8s infinite;
+      position: relative;
+    }
+
+    @keyframes NI8 {
+      0% {
+        background-image: linear-gradient(to bottom, skyblue, white);
+      }
+      70% {
+        background-image: linear-gradient(to bottom, black, white);
+      }
+    }
+
+    .sun {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background-color: yellow;
+      border: 2px solid orange;
+      box-shadow: 0px 0px 15px 10px orange;
+      position: fixed;
+      top: 30px;
+      right: 150px;
+      animation: Sun_Ani 8s infinite;
+    }
+
+    @keyframes Sun_Ani {
+      70% {
+        background-color: aliceblue;
+        border: 2px solid transparent;
+        box-shadow: 0px 0px 10px 20px grey;
+      }
+    }
+
+    .road {
+      width: 100%;
+      height: 150px;
+      background-color: black;
+      display: flex;
+      gap: 2px;
+    }
+
+    .block {
+      width: 120px;
+      height: 30px;
+      background-color: white;
+      margin: 50px;
+    }
+
+    /* ================= CAR ================= */
+    .car {
+      width: 150px;
+      height: 60px;
+      background: red;
+      border-radius: 10px;
+      position: relative;
+      margin: 45px;
+      animation: CAR_ANI 8s linear infinite;
+    }
+
+    .car::before {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 30px;
+      background: darkred;
+      top: -25px;
+      left: 20px;
+      border-radius: 5px;
+    }
+
+    .wheel {
+      width: 30px;
+      height: 30px;
+      background: black;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -15px;
+    }
+
+    .wheel.left {
+      left: 20px;
+    }
+
+    .wheel.right {
+      right: 20px;
+    }
+
+    @keyframes CAR_ANI {
+      0%   { left: 0px; }
+      25%  { left: 100px; }
+      50%  { left: 500px; }
+      75%  { left: 800px; }
+      100% { left: 1200px; }
+    }
+
+    /* =============== TREES =============== */
+    .branch, .branch2 {
+      width: 50px;
+      height: 250px;
+      background: linear-gradient(to right, #4f2e28, #802c1f);
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+      position: fixed;
+      top: 458px;
+      z-index: 5;
+    }
+
+    .branch { left: 60px; }
+    .branch2 { left: 200px; }
+
+    .leaf, .leaves, .leaves1, .leaves2, .leaves3, .leaves4 {
+      width: 50px;
+      height: 50px;
+      background-color: rgb(30, 166, 30);
+      border-radius: 25px;
+      position: absolute;
+    }
+
+    .leaf {
+      top: 10px;
+      position: relative;
+    }
+
+    .leaves {
+      top: -20px;
+      left: -20px;
+    }
+
+    .leaves1 {
+      top: 30px;
+      right: 20px;
+    }
+
+    .leaves2 {
+      top: -30px;
+      right: -60px;
+    }
+
+    .leaves3 {
+      top: 28px;
+      right: -20px;
+    }
+
+    .leaves4 {
+      height: 25px;
+      border-top-left-radius: 25px;
+      border-top-right-radius: 25px;
+      top: -45px;
+      right: -38px;
+    }
+
+    /* =============== CLOUDS =============== */
+    .cloud-container {
+      position: fixed;
+      top: 40px;
+      left: 100px;
+      z-index: 1;
+    }
+     .cloud {
+      width: 80px;
+      height: 40px;
+      background: white;
+      border-radius: 40px;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      animation: cloudMove 20s linear infinite;
+    }
+
+    .cloud::before,
+    .cloud::after {
+      content: '';
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+    }
+
+    .cloud::before {
+      width: 50px;
+      height: 50px;
+      top: -10px;
+      left: 20px;
+    }
+
+    .cloud::after {
+      width: 40px;
+      height: 40px;
+      top: -5px;
+      left: 45px;
+    }
+
+    @keyframes cloudMove {
+      0% { left: -100px; }
+      100% { left: 120%; }
+    }
+    
+    /* =============== BIRDS =============== */
+    .bird {
+      width: 30px;
+      height: 20px;
+      position: absolute;
+      top: 100px;
+      left: 0;
+      color: black;
+      font-size: 25px;
+      animation: bir 8s linear infinite;
+    }
+
+    @keyframes bir {
+      0%   { left: 0px; }
+      25%  { left: 100px; }
+      50%  { left: 500px; }
+      75%  { left: 800px; }
+      100% { left: 1200px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="sky">
+    <div class="sun"></div>
+
+    <!-- Clouds -->
+    <div class="cloud-container">
+      <div class="cloud"></div>
+      <div class="cloud"></div>
+    </div>
+
+    <!-- Bird -->
+    <div class="bird">^</div>
+
+    <!-- Trees -->
+    <div class="branch">
+      <div class="leaf"></div>
+      <div class="leaves">
+        <div class="leaves1">
+          <div class="leaves4"></div>
+          <div class="leaves2">
+            <div class="leaves3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="branch2">
+      <div class="leaf"></div>
+
+      <!-- Car -->
+      <div class="car">
+        <div class="wheel left"></div>
+        <div class="wheel right"></div>
+      </div>
+
+      <div class="leaves">
+        <div class="leaves1">
+          <div class="leaves4"></div>
+          <div class="leaves2">
+            <div class="leaves3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Road -->
+  <div class="road">
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+    <div class="block"></div>
+  </div>
+</body>
+</html>

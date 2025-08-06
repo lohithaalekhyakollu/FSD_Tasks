@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Output Methods</title>
+</head>
+<body>
+    <h1>JavaScript Output</h1>
+    <button onclick="displayAlert()">Click for Alert</button>
+    <p id="demo"></p>
+    <script>
+        console.log("Console Output");
+        function displayAlert() {
+            alert("Hello, This is an Alert Box!");
+            document.write("Hello, This is document.write output!");
+            document.getElementById("demo").innerHTML = "Hello, This is innerHTML output!";
+        }
+        function printPage() {
+            window.print();
+        }
+    </script>
+    <button onclick="printPage()">Print Page</button>
+</body>
+</html>

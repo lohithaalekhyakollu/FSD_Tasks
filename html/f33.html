@@ -1,0 +1,40 @@
+<html>
+<head>
+       <title>Loops</title>
+</head>
+<body>
+    <h1>Loops</h1>
+    <button onclick="ForIn()">For-In Loop</button>
+    <button onclick="ForEach()">For-Each Loop</button>
+    <button onclick="ForOf()">For-Of Loop</button>
+    <div id="result"></div>
+    <script>
+        let person = {
+            name: "John Doe",
+            age: 30,
+            city: "New York"
+        };
+        function ForIn() {
+            let result = "for in"+`<br>`;
+            for (let key in person) {
+                result += `${key}: ${person[key]}<br>`;
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+        function ForEach() {
+            let result = "for each"+`<br>`
+            Object.keys(person).forEach(key => {
+                result += `${key}: ${person[key]}<br>`;
+            });
+            document.getElementById("result").innerHTML = result;
+        }
+        function ForOf() {
+            let result = "for of"+`<br>`
+            for (let [key, value] of Object.entries(person)) {
+                result += `${key}: ${value}<br>`;
+            }
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

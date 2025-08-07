@@ -33,12 +33,12 @@ function renderCards() {
   document.getElementsByClassName('card-container')[0].innerHTML = myc;
 }
 function addCard() {
-  var brand = document.getElementById("brandInput").value;
+  var name = document.getElementById("brandInput").value;
   var price = document.getElementById("priceInput").value;
   var image = document.getElementById("imageInput").value;
 
   if (brand && price && image) {
-    cards.push({ Image: image, Price: price, Brand: brand });
+    cards.push({ Image: image, Price: price, name: name });
     renderCards(); // Refresh card view
   } else {
     alert("Please fill all fields!");

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Card with JS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .product-card {
+            background: white;
+            width: 250px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+        .product-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .price {
+            color: #28a745;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #0077ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background-color: #005fcc;
+        }
+        .hidden {
+            display: none;
+        }
+        #message {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-card">
+        <img src="../images/i2.png" alt="Product Image">
+        <h2>Wireless Headphones</h2>
+        <p class="price">$59.99</p>
+        <button id="buyBtn">Buy Now</button>
+        <p id="message" class="hidden"></p>
+    </div>
+
+    <script>
+        document.getElementById("buyBtn").addEventListener("click", function() {
+        let message = document.getElementById("message");
+        message.textContent = "✅ Item added to your cart!";
+        message.classList.remove("hidden");
+        setTimeout(() => {
+            message.classList.add("hidden");
+        }, 2000);
+        });
+    </script>
+</body>
+</html>

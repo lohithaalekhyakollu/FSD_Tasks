@@ -21,6 +21,9 @@ function set()
 // setTimeout(()=>{
 //     clearInterval(s);
 // },(1000*p))
+let fun=()=>{
+    
+}
 }
 function reset()
 {

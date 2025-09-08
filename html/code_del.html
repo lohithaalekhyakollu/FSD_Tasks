@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cinematic Intro</title>
+  <!-- Poppins font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: radial-gradient(circle at center, #0b0b0f, #000);
+      overflow: hidden;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* soft animated gradient background */
+    body::before {
+      content: "";
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, #444, #222, #111, #444);
+      animation: spin 18s linear infinite;
+      filter: blur(200px);
+      opacity: 0.15;
+      z-index: 0;
+    }
+    @keyframes spin {
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Intro container */
+    #intro {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: rgba(0,0,0,0.85);
+      z-index: 10;
+    }
+
+    #intro h1 {
+      font-size: 3.5rem;
+      display: flex;
+      color: #f5f5f5;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    #intro h1 span {
+      display: inline-block;
+      opacity: 0;
+      position: relative;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: white;
+      opacity: 0.9;
+      pointer-events: none;
+      animation: explode 0.6s forwards;
+    }
+
+    @keyframes fromLeft {
+      0% { transform: translateX(-300px); opacity: 0; }
+      70% { transform: translateX(20px); opacity: 1; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes fromRight {
+      0% { transform: translateX(300px); opacity: 0; }
+      70% { transform: translateX(-20px); opacity: 1; }
+      100% { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes fromTop {
+      0% { transform: translateY(-250px); opacity: 0; }
+      70% { transform: translateY(15px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fromBottom {
+      0% { transform: translateY(250px); opacity: 0; }
+      70% { transform: translateY(-15px); opacity: 1; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes explode {
+      0% { transform: scale(1) translate(0,0); opacity: 1; }
+      100% { transform: scale(0.4) translate(var(--x), var(--y)); opacity: 0; }
+    }
+
+    .fade-out { animation: fadeOut 1s forwards; }
+    @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
+    @keyframes fadeIn { to { opacity: 1; visibility: visible; } }
+  </style>
+</head>
+<body>
+
+  <!-- Intro Animation -->
+  <div id="intro">
+    <h1 id="strike-text"></h1>
+  </div>
+
+  <!-- Main Content -->
+  <div id="main">
+    <h1>Welcome to Code Delight</h1>
+    <p>Learn coding in the most engaging way 🚀</p>
+  </div>
+
+  <script>
+    const text = "Code Delight";
+    const container = document.getElementById("strike-text");
+    const intro = document.getElementById("intro");
+    const main = document.getElementById("main");
+    const animations = ["fromLeft", "fromRight", "fromTop", "fromBottom"];
+    let lastDelay = 0;
+
+    text.split("").forEach((char, i) => {
+      const span = document.createElement("span");
+      span.textContent = char === " " ? "\u00A0" : char;
+
+      const anim = animations[Math.floor(Math.random() * animations.length)];
+      const delay = i * 0.35;
+      span.style.animation = `${anim} 0.7s forwards`;
+      span.style.animationDelay = `${delay}s`;
+      lastDelay = delay;
+
+      // sparks on impact
+      span.addEventListener("animationend", () => {
+        if (char !== " ") {
+          for (let j = 0; j < 12; j++) {
+            const particle = document.createElement("div");
+            particle.className = "particle";
+            const angle = Math.random() * 2 * Math.PI;
+            const distance = 30 + Math.random() * 40;
+            particle.style.setProperty("--x", `${Math.cos(angle) * distance}px`);
+            particle.style.setProperty("--y", `${Math.sin(angle) * distance}px`);
+            particle.style.background = `hsl(${Math.random()*360}, 100%, 65%)`;
+            span.appendChild(particle);
+            setTimeout(() => particle.remove(), 600);
+          }
+        }
+      });
+
+      container.appendChild(span);
+    });
+
+    // Fade out intro and show main
+    setTimeout(() => {
+      intro.classList.add("fade-out");
+      setTimeout(() => {
+        intro.style.display = "none";
+        main.classList.add("show");
+      }, 1000);
+    }, (lastDelay + 2.5) * 1000);
+  </script>
+</body>
+</html>

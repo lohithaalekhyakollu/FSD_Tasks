@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Animation</title>
+  <style>
+    body {
+      background: #0d1117;
+      color: #f5f5f5;
+      font-family: monospace;
+      font-size: 50px;
+      font-weight: bolder;
+      letter-spacing: 0.5px;
+      color: #0cd1df;
+      filter: drop-shadow(2px 3px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    .typing {
+      display: inline-block;
+    }
+      h1 span {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(-100px);
+      animation: drop 0.5s forwards;
+    }
+
+    @keyframes drop {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      animation: blink 0.7s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      50%, 100% { opacity: 0.7; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="typing">
+    <span id="typing"></span><span class="cursor" id="cursor">|</span>
+  </div> <br> 
+  <div class="drop">
+  <h1 id="drop-text"></h1></div>
+  <script>
+    const text = "LOHITHA ALEKHYA";
+    const typingElement = document.getElementById("typing");
+    const cursor = document.getElementById("cursor");
+    let index = 0;
+
+    function typeLetter() {
+      if (index < text.length) {
+        typingElement.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeLetter, 100); 
+      } else {
+        cursor.style.display = "none";
+      }
+    }
+
+    typeLetter();
+  </script>
+  <script>
+    const container = document.getElementById("drop-text");
+    text.split("").forEach((char, i) => {
+      const span = document.createElement("span");
+      span.textContent = char === " " ? "\u00A0" : char; // preserve spaces
+      span.style.animationDelay = `${i * 0.1}s`; // stagger letters
+      container.appendChild(span);
+    });
+  </script>
+  
+</body>
+</html>

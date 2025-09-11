@@ -5,8 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lohitha Alekhya Kollu - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../css/portfolio.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/portfolio.css">
+  <style>
+    .cv-button {
+      display: inline-block;
+      padding: 12px 28px;
+      background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+      color: white;
+      font-weight: 500;
+      border-radius: 9999px; 
+      text-decoration: none;
+      box-shadow: 0 4px 5px rgba(56, 189, 248, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -18,87 +31,73 @@
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </nav>
+     <a href="sampleCV.pdf" download class="cv-button">Download CV</a>
     <div class="mobile-view">
-      <div class="parent"><i class="fa-solid fa-bars"></i></div>
-      <div class="drop">
+      <div class="parent" id="mobile-menu-btn"><i class="fa-solid fa-bars"></i></div>
+      <div class="drop" id="mobile-menu">
         <a href="#hero">Home</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
-         <a href="#about">About</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
+        <a href="sampleCV.pdf" download class="cv-button">Download CV</a>
       </div>
     </div>
   </header>
   <section class="hero" id="hero">
     <div class="hero-content">
       <h2>Hello, I'm Lohitha Alekhya Kollu</h2>
-      <p>A Computer Science undergraduate passionate about bringing ideas to life on the web through interactive, responsive, and accessible designs that make every user’s experience smooth and engaging.</p>
+      <p>A Computer Science undergraduate passionate about bringing ideas to life on the web through interactive, responsive, and accessible designs.</p>
       <a href="#projects">View My Work</a>
     </div>
-    <img src="https://static.vecteezy.com/system/resources/previews/038/974/578/non_2x/ai-generated-professional-portrait-of-a-competent-woman-free-photo.jpg" alt="Lohitha Alekhya Kollu">
+    <div class="hero-img-container">
+      <img src="../images/heroImg.png" alt="Lohitha Alekhya Kollu">
+    </div>
   </section>
   <section class="projects" id="projects">
     <h2>Projects</h2>
     <div class="projects-grid">
-      <div class="project-card" onclick="window.open('https://github.com/lohithaalekhyakollu/Indivista','_blank')" style="cursor:pointer;">
-        <img src="../images/indivista.jpg" alt="Indivista Dashboard">
+      <div class="project-card" onclick="window.open('https://github.com/lohithaalekhyakollu/Indivista','_blank')">
+        <img src="../images/indivista.jpg" alt="Indivista">
         <div class="content">
           <h3>Indivista</h3>
-          <p>A digital platform to explore India’s culture, heritage, and travel destinations interactively.</p>
+          <p>A digital platform to explore India’s culture, heritage, and destinations interactively.</p>
         </div>
       </div>
-      <div class="project-card" onclick="window.open('https://github.com/lohithaalekhyakollu/CodeDelight','_blank')" style="cursor:pointer;">
+      <div class="project-card" onclick="window.open('https://github.com/lohithaalekhyakollu/CodeDelight','_blank')">
         <img src="../images/codedel.jpg" alt="Code Delight">
         <div class="content">
           <h3>Code Delight</h3>
-          <p>An educational platform featuring courses, compiler integration, and student reviews.</p>
+          <p>An educational platform featuring courses, compiler integration, and reviews.</p>
         </div>
       </div>
       <div class="project-card" onclick="window.open('https://github.com/lohithaalekhyakollu/FSD_Tasks/blob/main/html/Portfolio.html','_blank')" style="cursor:pointer;">
         <img src="../images/port.jpg" alt="Portfolio Website">
         <div class="content">
           <h3>Personal Portfolio</h3>
-          <p>A responsive animated portfolio showcasing projects, skills, and contact information.</p>
+          <p>A responsive animated portfolio showcasing projects, skills, and contact info.</p>
         </div>
       </div>
     </div>
   </section>
   <section class="skills" id="skills">
-  <h2>Skills</h2>
-  <div class="skills-container">
-    <div class="skill">
-      <div class="skill-name">HTML</div>
-      <div class="skill-bar">
-        <div class="skill-fill fill-html"></div>
-      </div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">CSS</div>
-      <div class="skill-bar">
-        <div class="skill-fill fill-css"></div>
-      </div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">JavaScript</div>
-      <div class="skill-bar">
-        <div class="skill-fill fill-js"></div>
-      </div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">React</div>
-      <div class="skill-bar">
-        <div class="skill-fill fill-react"></div>
-      </div>
-    </div>
-  </div>
-</section>
-  <section class="about" id="about">
-    <img src="https://static.vecteezy.com/system/resources/previews/038/974/578/non_2x/ai-generated-professional-portrait-of-a-competent-woman-free-photo.jpg" alt="About Me">
-    <div class="about-text">
-      <h2>About Me</h2>
-      <p>I am a passionate frontend developer with strong skills in HTML, CSS, JavaScript, and React. I enjoy creating user-friendly, modern, and responsive websites that combine clean code with appealing UI/UX. I’ve worked on projects like <b>Indivista</b> and <b>Code Delight</b>, and my goal is to contribute to building impactful digital experiences.</p>
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill"><div class="skill-name">HTML</div><div class="skill-bar-container"><div class="skill-fill" data-width="95%"></div></div></div>
+      <div class="skill"><div class="skill-name">CSS</div><div class="skill-bar-container"><div class="skill-fill" data-width="90%"></div></div></div>
+      <div class="skill"><div class="skill-name">JavaScript</div><div class="skill-bar-container"><div class="skill-fill" data-width="85%"></div></div></div>
+      <div class="skill"><div class="skill-name">React</div><div class="skill-bar-container"><div class="skill-fill" data-width="25%"></div></div></div>
     </div>
   </section>
+  <section class="about" id="about">
+        <div class="about-img-container">
+            <img id="about-image" src="../images/about.png" alt="About Me">
+        </div>
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>I am a passionate frontend developer with strong skills in HTML, CSS, JavaScript, and React. I enjoy creating user-friendly, modern, and responsive websites that combine clean code with appealing UI/UX. I’ve worked on projects like <b>Indivista</b> and <b>Code Delight</b>, and my goal is to contribute to building impactful digital experiences.</p>
+        </div>
+    </section>
   <section class="contact" id="contact">
     <h2>Contact Me</h2>
     <form>
@@ -107,14 +106,34 @@
       <textarea rows="5" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
-    <p style="margin-top:1rem;">📧 Email: <a href="mailto:alekhyakollu@gmail.com" style="color: white;text-decoration: none;">alekhyakollu@gmail.com</a></p>
-    <p>🔗 
-      <a href="https://github.com/lohithaalekhyakollu" target="_blank" style="color: white;text-decoration: none;">GitHub</a> | 
-      <a href="https://www.linkedin.com/in/lohitha-alekhya-k-87b71328b/" target="_blank" style="color: white;text-decoration: none;">LinkedIn</a>
-    </p>
+    <div class="social-links">
+      <a href="mailto:alekhyakollu@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+      <a href="https://github.com/lohithaalekhyakollu" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/lohitha-alekhya-k-87b71328b/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+    </div>
   </section>
   <footer>
     <p>&copy; 2025 Lohitha Alekhya Kollu. All rights reserved.</p>
   </footer>
+  <script>
+    document.getElementById("mobile-menu-btn")
+      .addEventListener("click", () =>
+        document.getElementById("mobile-menu").classList.toggle("active")
+      );
+    const skillFills = document.querySelectorAll(".skill-fill");
+    new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        skillFills.forEach(f => f.style.width = f.dataset.width);
+      }
+    }, { threshold: 0.5 }).observe(document.getElementById("skills"));
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("header nav a, .drop a");
+    window.addEventListener("scroll", () => {
+      let current = [...sections].findLast(s => window.scrollY >= s.offsetTop - 120)?.id;
+      navLinks.forEach(link =>
+        link.classList.toggle("active", link.getAttribute("href") === "#" + current)
+      );
+    });
+  </script>
 </body>
 </html>

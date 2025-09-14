@@ -93,8 +93,6 @@
       [0,3,6],[1,4,7],[2,5,8], // cols
       [0,4,8],[2,4,6]          // diagonals
     ];
-
-    // Create cells
     function createBoard() {
       boardEl.innerHTML = "";
       board.forEach((cell, index) => {
@@ -106,16 +104,12 @@
         cellEl.addEventListener("click", handleClick);
         boardEl.appendChild(cellEl);
       });
-    }
-
-    // Handle player click
     function handleClick(e) {
       const index = e.target.dataset.index;
-      if (board[index] || !gameActive) return; // already filled or game over
+      if (board[index] || !gameActive) return; 
       board[index] = currentPlayer;
       e.target.textContent = currentPlayer;
       e.target.classList.add("taken");
-
       if (checkWin()) {
         statusEl.textContent = `🎉 Player ${currentPlayer} wins!`;
         gameActive = false;
@@ -127,15 +121,11 @@
         statusEl.textContent = `Player ${currentPlayer}'s turn`;
       }
     }
-
-    // Check for winner
     function checkWin() {
       return winningCombos.some(combo => {
         return combo.every(i => board[i] === currentPlayer);
       });
     }
-
-    // Reset game
     function resetGame() {
       board = Array(9).fill("");
       currentPlayer = "X";
@@ -143,10 +133,8 @@
       statusEl.textContent = "Player X's turn";
       createBoard();
     }
-
-    // Init
     resetBtn.addEventListener("click", resetGame);
-    resetGame(); // start game
+    resetGame(); 
   </script>
 </body>
 </html>

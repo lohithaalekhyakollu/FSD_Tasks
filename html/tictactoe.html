@@ -21,14 +21,12 @@
       margin-bottom: 20px;
       color: #38bdf8;
     }
-
     .board {
       display: grid;
       grid-template-columns: repeat(3, 100px);
       grid-template-rows: repeat(3, 100px);
       gap: 6px;
     }
-
     .cell {
       background: #1e293b;
       border-radius: 8px;
@@ -40,21 +38,17 @@
       cursor: pointer;
       transition: background 0.2s;
     }
-
     .cell:hover {
       background: #334155;
     }
-
     .cell.taken {
       cursor: not-allowed;
     }
-
     .status {
       margin-top: 20px;
       font-size: 1.2rem;
       min-height: 1.5em;
     }
-
     button {
       margin-top: 16px;
       padding: 10px 20px;
@@ -66,7 +60,6 @@
       cursor: pointer;
       transition: transform 0.2s;
     }
-
     button:hover {
       transform: scale(1.05);
     }
@@ -77,17 +70,13 @@
   <div class="board" id="board"></div>
   <div class="status" id="status"></div>
   <button id="reset">Reset Game</button>
-
   <script>
     const boardEl = document.getElementById("board");
     const statusEl = document.getElementById("status");
     const resetBtn = document.getElementById("reset");
-
     let board = Array(9).fill("");
     let currentPlayer = "X";
     let gameActive = true;
-
-    // Winning combinations (indices of board cells)
     const winningCombos = [
       [0,1,2],[3,4,5],[6,7,8], // rows
       [0,3,6],[1,4,7],[2,5,8], // cols
